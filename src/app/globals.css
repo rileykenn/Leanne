@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-navy-900: #0f1328;
+  --color-navy-800: #1a1f3d;
+  --color-navy-700: #252b52;
+  --color-navy-600: #313867;
+  --color-gold-400: #f5c518;
+  --color-gold-500: #d4a815;
+  --color-gold-600: #b38e12;
+  --color-pink-400: #f0a8c8;
+  --color-pink-500: #e88ab5;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --font-sans: var(--font-primary);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1328;
+}
+::-webkit-scrollbar-thumb {
+  background: #313867;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f5c518;
+}
+
+/* Gold accent underline */
+.gold-line {
+  width: 50px;
+  height: 3px;
+  background: #f5c518;
+  border-radius: 2px;
+}
+
+/* Subtle glow for cards */
+.card-glow {
+  box-shadow: 0 0 30px rgba(245, 197, 24, 0.05);
+}
+
+/* Animate on scroll helper */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.7s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation delays */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
