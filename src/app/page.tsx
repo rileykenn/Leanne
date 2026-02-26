@@ -24,16 +24,18 @@ function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-navy-900/95 backdrop-blur-md shadow-lg shadow-black/20"
-          : "bg-transparent"
+        ? "bg-navy-900/95 backdrop-blur-md shadow-lg shadow-black/20"
+        : "bg-transparent"
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-gold-400 rounded-lg flex items-center justify-center font-bold text-navy-900 text-xl group-hover:scale-105 transition-transform">
-            Z
-          </div>
+          <img
+            src="/images/z_logo.png"
+            alt="Zampa Services Logo"
+            className="w-10 h-10 rounded-lg object-contain group-hover:scale-105 transition-transform"
+          />
           <span className="text-white font-semibold text-lg tracking-tight hidden sm:block">
             Zampa Services
           </span>
@@ -155,28 +157,9 @@ function Hero() {
             <div className="absolute -inset-4 bg-gradient-to-br from-gold-400/20 to-pink-400/10 blur-2xl rounded-2xl" />
             <div className="relative w-80 h-96 lg:w-96 lg:h-[28rem] rounded-2xl overflow-hidden border-2 border-navy-600/50 shadow-2xl">
               <img
-                src="/images/leanne.jpg"
+                src="/images/portait.jpeg"
                 alt="Leanne Zampa — Zampa Services"
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = "none";
-                  if (target.parentElement) {
-                    target.parentElement.innerHTML = `
-                      <div class="w-full h-full bg-gradient-to-br from-navy-700 to-navy-800 flex items-center justify-center">
-                        <div class="text-center">
-                          <div class="w-24 h-24 mx-auto mb-4 bg-gold-400/10 rounded-full flex items-center justify-center">
-                            <svg class="w-12 h-12 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
-                          </div>
-                          <p class="text-gold-400 font-semibold text-lg">Leanne Zampa</p>
-                          <p class="text-slate-400 text-sm mt-1">Licensed Process Server</p>
-                        </div>
-                      </div>
-                    `;
-                  }
-                }}
               />
             </div>
           </div>
@@ -655,9 +638,11 @@ function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gold-400 rounded-lg flex items-center justify-center font-bold text-navy-900 text-xl">
-                Z
-              </div>
+              <img
+                src="/images/z_logo.png"
+                alt="Zampa Services Logo"
+                className="w-10 h-10 rounded-lg object-contain"
+              />
               <span className="text-white font-semibold text-lg">
                 Zampa Services
               </span>
