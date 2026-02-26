@@ -133,7 +133,7 @@ function Hero() {
           </p>
           <div className="flex flex-wrap gap-4 mb-10">
             <a
-              href="mailto:zampaservices1@gmail.com"
+              href="#contact"
               className="bg-gold-400 hover:bg-gold-500 text-navy-900 font-semibold px-8 py-3.5 rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-gold-400/20"
             >
               Email Today
@@ -367,7 +367,7 @@ function Pricing() {
               ))}
             </ul>
             <a
-              href="mailto:zampaservices1@gmail.com?subject=Divorce%20%26%20Service%20Package%20Enquiry"
+              href="mailto:Leanne@zampaservices.com.au?subject=Divorce%20%26%20Service%20Package%20Enquiry"
               className="block w-full bg-gold-400 hover:bg-gold-500 text-navy-900 font-semibold py-3.5 rounded-lg transition-all hover:scale-105"
             >
               Get Started
@@ -405,7 +405,7 @@ function Pricing() {
               ))}
             </ul>
             <a
-              href="mailto:zampaservices1@gmail.com?subject=Personal%20Service%20Enquiry"
+              href="mailto:Leanne@zampaservices.com.au?subject=Personal%20Service%20Enquiry"
               className="block w-full bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3.5 rounded-lg transition-all hover:scale-105"
             >
               Get Started
@@ -562,7 +562,7 @@ function Contact() {
                 </a>
 
                 <a
-                  href="mailto:zampaservices1@gmail.com"
+                  href="mailto:Leanne@zampaservices.com.au"
                   className="flex items-center gap-4 group"
                 >
                   <div className="w-12 h-12 bg-navy-900 rounded-xl flex items-center justify-center text-gold-400 group-hover:bg-gold-400 group-hover:text-navy-900 transition-colors">
@@ -572,7 +572,7 @@ function Contact() {
                   </div>
                   <div>
                     <p className="text-navy-900 font-semibold group-hover:text-gold-500 transition-colors">
-                      zampaservices1@gmail.com
+                      Leanne@zampaservices.com.au
                     </p>
                     <p className="text-slate-400 text-sm">Email me directly</p>
                   </div>
@@ -610,7 +610,7 @@ function Contact() {
                 chat about your situation. I'm here to help.
               </p>
               <a
-                href="mailto:zampaservices1@gmail.com?subject=Free%20Quote%20Request"
+                href="mailto:Leanne@zampaservices.com.au?subject=Free%20Quote%20Request"
                 className="bg-gold-400 hover:bg-gold-500 text-navy-900 font-semibold px-8 py-3.5 rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-gold-400/20 mb-3 inline-block"
               >
                 Request a Free Quote
@@ -679,7 +679,7 @@ function Footer() {
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-slate-400 text-sm">
               <p>0413 717 358</p>
-              <p>zampaservices1@gmail.com</p>
+              <p>Leanne@zampaservices.com.au</p>
               <p>Illawarra, NSW</p>
               <p className="text-xs mt-4 pt-4 border-t border-navy-700">
                 Justice of the Peace No. 154195
