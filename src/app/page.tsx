@@ -157,7 +157,7 @@ function Hero() {
             <div className="absolute -inset-4 bg-gradient-to-br from-gold-400/20 to-pink-400/10 blur-2xl rounded-2xl" />
             <div className="relative w-80 h-96 lg:w-96 lg:h-[28rem] rounded-2xl overflow-hidden border-2 border-navy-600/50 shadow-2xl">
               <img
-                src="/images/portait.jpeg"
+                src="/images/Portaitnew.jpeg"
                 alt="Leanne Zampa — Zampa Services"
                 className="w-full h-full object-cover"
               />
