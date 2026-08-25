@@ -147,7 +147,7 @@ function Hero() {
           </div>
           <p className="text-slate-400 text-sm">
             Services starting from{" "}
-            <span className="text-gold-400 font-semibold text-lg">$100.00</span>
+            <span className="text-gold-400 font-semibold text-lg">$59.00</span>
           </p>
         </div>
 
@@ -263,7 +263,7 @@ const reasons = [
   {
     title: "Cost Effective",
     description:
-      "With services starting from just $100, you get professional assistance at a fraction of the cost of a solicitor. Transparent pricing with no hidden fees.",
+      "With services starting from just $59, you get professional assistance at a fraction of the cost of a solicitor. Transparent pricing with no hidden fees.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -332,9 +332,45 @@ function Pricing() {
           <div className="gold-line mx-auto mt-4" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {/* Package 1 */}
-          <div className="relative group rounded-2xl border-2 border-gold-400 bg-gradient-to-br from-navy-900 to-navy-800 p-10 text-center hover:shadow-2xl hover:shadow-gold-400/10 transition-all duration-300">
+          <div className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-8 text-center hover:shadow-2xl hover:border-gold-400/30 transition-all duration-300">
+            <h3 className="text-xl font-bold text-navy-900 mb-2">
+              Tailored Support
+            </h3>
+            <p className="text-slate-500 text-sm mb-6">
+              Support tailored to your individual needs
+            </p>
+            <div className="mb-6">
+              <span className="text-slate-400 text-sm">from</span>
+              <span className="text-5xl font-bold text-navy-900 ml-2">$59</span>
+            </div>
+            <ul className="text-left space-y-3 mb-8">
+              {[
+                "Help with just the steps you need",
+                "Guidance on forms and paperwork",
+                "Justice of the Peace witnessing",
+                "Questions answered in plain English",
+                "Pay only for the help you use",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-slate-600 text-sm">
+                  <svg className="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a
+              href="mailto:Leanne@zampaservices.com.au?subject=Tailored%20Support%20Enquiry"
+              className="block w-full mt-auto bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3.5 rounded-lg transition-all hover:scale-105"
+            >
+              Get Started
+            </a>
+          </div>
+
+          {/* Package 2 */}
+          <div className="relative group flex flex-col rounded-2xl border-2 border-gold-400 bg-gradient-to-br from-navy-900 to-navy-800 p-8 text-center hover:shadow-2xl hover:shadow-gold-400/10 transition-all duration-300">
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold-400 text-navy-900 font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider">
               Most Popular
             </div>
@@ -368,14 +404,14 @@ function Pricing() {
             </ul>
             <a
               href="mailto:Leanne@zampaservices.com.au?subject=Divorce%20%26%20Service%20Package%20Enquiry"
-              className="block w-full bg-gold-400 hover:bg-gold-500 text-navy-900 font-semibold py-3.5 rounded-lg transition-all hover:scale-105"
+              className="block w-full mt-auto bg-gold-400 hover:bg-gold-500 text-navy-900 font-semibold py-3.5 rounded-lg transition-all hover:scale-105"
             >
               Get Started
             </a>
           </div>
 
-          {/* Package 2 */}
-          <div className="group rounded-2xl border border-slate-200 bg-white p-10 text-center hover:shadow-2xl hover:border-gold-400/30 transition-all duration-300">
+          {/* Package 3 */}
+          <div className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-8 text-center hover:shadow-2xl hover:border-gold-400/30 transition-all duration-300">
             <h3 className="text-xl font-bold text-navy-900 mb-2">
               Personal Service Only
             </h3>
@@ -406,7 +442,7 @@ function Pricing() {
             </ul>
             <a
               href="mailto:Leanne@zampaservices.com.au?subject=Personal%20Service%20Enquiry"
-              className="block w-full bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3.5 rounded-lg transition-all hover:scale-105"
+              className="block w-full mt-auto bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3.5 rounded-lg transition-all hover:scale-105"
             >
               Get Started
             </a>
