@@ -378,18 +378,17 @@ function Pricing() {
               Divorce & Service Package
             </h3>
             <p className="text-slate-400 text-sm mb-6">
-              Complete divorce application with personal service of documents
+              Professional assistance with preparing and filing your Divorce
+              Application.
             </p>
             <div className="mb-6">
-              <span className="text-slate-400 text-sm">from</span>
-              <span className="text-5xl font-bold text-gold-400 ml-2">
-                $400
-              </span>
+              <span className="text-5xl font-bold text-gold-400">$300</span>
             </div>
             <ul className="text-left space-y-3 mb-8">
               {[
                 "Divorce application preparation",
                 "All documents witnessed and certified",
+                "Assistance with filing your divorce application and relevant documents with the court",
                 "Personal service by Licensed Process Server",
                 "Full compliance with legal requirements",
                 "Personal attention from start to finish",
