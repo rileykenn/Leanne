@@ -332,7 +332,7 @@ function Pricing() {
           <div className="gold-line mx-auto mt-4" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {/* Package 1 */}
           <div className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-8 text-center hover:shadow-2xl hover:border-gold-400/30 transition-all duration-300">
             <h3 className="text-xl font-bold text-navy-900 mb-2">
@@ -378,17 +378,18 @@ function Pricing() {
               Divorce & Service Package
             </h3>
             <p className="text-slate-400 text-sm mb-6">
-              Professional assistance with preparing and filing your Divorce
-              Application.
+              Complete divorce application with personal service of documents
             </p>
             <div className="mb-6">
-              <span className="text-5xl font-bold text-gold-400">$300</span>
+              <span className="text-slate-400 text-sm">from</span>
+              <span className="text-5xl font-bold text-gold-400 ml-2">
+                $400
+              </span>
             </div>
             <ul className="text-left space-y-3 mb-8">
               {[
                 "Divorce application preparation",
                 "All documents witnessed and certified",
-                "Assistance with filing your divorce application and relevant documents with the court",
                 "Personal service by Licensed Process Server",
                 "Full compliance with legal requirements",
                 "Personal attention from start to finish",
@@ -410,6 +411,43 @@ function Pricing() {
           </div>
 
           {/* Package 3 */}
+          <div className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-8 text-center hover:shadow-2xl hover:border-gold-400/30 transition-all duration-300">
+            <h3 className="text-xl font-bold text-navy-900 mb-2">
+              Divorce &amp; Filing Package
+            </h3>
+            <p className="text-slate-500 text-sm mb-6">
+              Complete divorce application and assistance with filing with the
+              court
+            </p>
+            <div className="mb-6">
+              <span className="text-slate-400 text-sm">from</span>
+              <span className="text-5xl font-bold text-navy-900 ml-2">$320</span>
+            </div>
+            <ul className="text-left space-y-3 mb-8">
+              {[
+                "Divorce application preparation",
+                "All documents witnessed and certified",
+                "Assistance with filing your divorce application and relevant documents with the court",
+                "Full compliance with legal requirements",
+                "Personal attention from start to finish",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-slate-600 text-sm">
+                  <svg className="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a
+              href="mailto:Leanne@zampaservices.com.au?subject=Divorce%20%26%20Filing%20Package%20Enquiry"
+              className="block w-full mt-auto bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3.5 rounded-lg transition-all hover:scale-105"
+            >
+              Get Started
+            </a>
+          </div>
+
+          {/* Package 4 */}
           <div className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-8 text-center hover:shadow-2xl hover:border-gold-400/30 transition-all duration-300">
             <h3 className="text-xl font-bold text-navy-900 mb-2">
               Personal Service Only
