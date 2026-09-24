@@ -1,79 +1,167 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-900: #0f1328;
-  --color-navy-800: #1a1f3d;
-  --color-navy-700: #252b52;
-  --color-navy-600: #313867;
-  --color-gold-400: #f5c518;
-  --color-gold-500: #d4a815;
-  --color-gold-600: #b38e12;
-  --color-pink-400: #f0a8c8;
-  --color-pink-500: #e88ab5;
-  --color-slate-100: #f1f5f9;
-  --color-slate-200: #e2e8f0;
-  --color-slate-300: #cbd5e1;
-  --color-slate-400: #94a3b8;
-  --color-slate-500: #64748b;
-  --color-slate-600: #475569;
-  --color-slate-700: #334155;
-  --font-sans: var(--font-primary);
+  /* Navy, matched to the print collateral (#05152c business card, #081934 social tile) */
+  --color-navy-950: #05142b;
+  --color-navy-900: #0a1a36;
+  --color-navy-800: #132849;
+  --color-navy-700: #1e3660;
+  --color-navy-600: #2c4778;
+
+  /* Champagne gold, matched to the print collateral (#dcb068 / #e0bd6b).
+     The old #f5c518 was a vivid yellow that read cheap beside the pamphlets. */
+  --color-gold-200: #f3e4bf;
+  --color-gold-300: #ecd39a;
+  --color-gold-400: #e0bd6b;
+  --color-gold-500: #cfa552;
+  --color-gold-600: #b3873a;
+  --color-gold-700: #8a672a;
+
+  /* Salmon rose, sampled from the pamphlets (bars #dd9891 / #e5a29a, headline #bb6a67).
+     Warm, hue ~7. NOT a magenta pink.
+     rose-100..300 are tints for fills and use on navy; rose-500 is the only shade
+     that clears 3:1 on cream, and only for large text or non-text. */
+  --color-rose-100: #faeeeb;
+  --color-rose-200: #f3d6cf;
+  --color-rose-300: #efc3be;
+  --color-rose-400: #e1a198;
+  --color-rose-500: #bf6e63;
+  --color-rose-600: #a2554b;
+
+  /* Cream ground, between the flyer (#f4ebe5) and the card (#f6ede3) */
+  --color-cream-50: #fbf7f4;
+  --color-cream-100: #f6ede6;
+  --color-cream-200: #efe2d9;
+  --color-cream-300: #e4d2c6;
+
+  /* Ink: navy-tinted text tones for cream grounds */
+  --color-ink-900: #0a1a36;
+  --color-ink-700: #33405f;
+  --color-ink-600: #4a5674;
+  --color-ink-500: #5f6987;
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-display), ui-serif, Georgia, serif;
+  --font-script: var(--font-script), cursive;
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 
 body {
-  font-family: var(--font-primary), system-ui, sans-serif;
+  background: var(--color-cream-100);
+  color: var(--color-ink-700);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #0f1328;
-}
-::-webkit-scrollbar-thumb {
-  background: #313867;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #f5c518;
+/* Anchored sections clear the sticky header */
+section[id] { scroll-margin-top: 5rem; }
+
+/* Cormorant ships old-style figures by default, which turn $400 into $4oo and a
+   licence number into a row of o's. Prices and credentials must be unambiguous. */
+@layer base {
+  .font-serif { font-variant-numeric: lining-nums; }
 }
 
-/* Gold accent underline */
-.gold-line {
-  width: 50px;
-  height: 3px;
-  background: #f5c518;
-  border-radius: 2px;
+::selection { background: var(--color-rose-200); color: var(--color-navy-900); }
+
+:focus-visible {
+  outline: 2px solid var(--color-rose-500);
+  outline-offset: 3px;
 }
 
-/* Subtle glow for cards */
-.card-glow {
-  box-shadow: 0 0 30px rgba(245, 197, 24, 0.05);
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-cream-200); }
+::-webkit-scrollbar-thumb { background: var(--color-rose-300); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-rose-400); }
+
+/* The Z from the logo, as a mask so it can take any brand colour:
+   champagne gold on cream (business card), rose on navy (flyer footer). */
+.z-mark {
+  display: inline-block;
+  -webkit-mask: url("/images/z_logo.png") center / contain no-repeat;
+  mask: url("/images/z_logo.png") center / contain no-repeat;
 }
 
-/* Animate on scroll helper */
-.fade-up {
-  opacity: 0;
-  transform: translateY(24px);
-  animation: fadeUp 0.7s ease forwards;
+/* Metallic gold, like the "30+" badge on the business card */
+.badge-gold {
+  background: linear-gradient(140deg, #f2dfad 0%, #e0bd6b 38%, #b98d3e 72%, #ecd39a 100%);
+  box-shadow:
+    0 18px 40px -16px rgb(10 26 54 / 0.55),
+    inset 0 1px 0 rgb(255 255 255 / 0.55);
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* Section rule: gold leads, rose closes, hard stop. A gold-to-rose fade would
+   read as rose gold, which is the one thing this palette must not become. */
+.duo-line {
+  width: 56px; height: 3px; border-radius: 2px;
+  background: linear-gradient(to right,
+    var(--color-gold-600) 0 34px,
+    var(--color-rose-500) 34px 56px);
+}
+.duo-line-dark {
+  width: 56px; height: 3px; border-radius: 2px;
+  background: linear-gradient(to right,
+    var(--color-gold-400) 0 34px,
+    var(--color-rose-300) 34px 56px);
+}
+
+@layer components {
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: 9999px;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.9375rem; font-weight: 600; line-height: 1;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  .btn:active { transform: scale(0.98); }
+
+  .btn-primary {
+    background: var(--color-navy-900); color: var(--color-cream-50);
+    box-shadow: 0 12px 28px -14px rgb(10 26 54 / 0.6);
+  }
+  .btn-primary:hover { background: var(--color-navy-800); }
+
+  .btn-secondary {
+    background: transparent; color: var(--color-navy-900);
+    box-shadow: inset 0 0 0 1.5px var(--color-navy-900);
+  }
+  .btn-secondary:hover { background: rgb(10 26 54 / 0.06); }
+
+  .btn-gold {
+    background: var(--color-gold-400); color: var(--color-navy-950);
+    box-shadow: 0 12px 28px -14px rgb(224 189 107 / 0.6);
+  }
+  .btn-gold:hover { background: var(--color-gold-300); }
+}
+
+/* Motion: a single rise, used for the hero on load and for sections on scroll. */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+.enter   { animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.enter-2 { animation-delay: 0.12s; }
+.enter-3 { animation-delay: 0.24s; }
+.enter-4 { animation-delay: 0.36s; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 30%;
+    }
   }
 }
-
-/* Staggered animation delays */
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
+@media (prefers-reduced-motion: reduce) {
+  .enter, .reveal { animation: none !important; }
+}
