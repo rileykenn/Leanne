@@ -338,6 +338,7 @@ const PACKAGES = [
     items: [
       "Divorce application preparation",
       "All documents witnessed and certified",
+      "Assistance with filing your divorce application and relevant documents with the court",
       "Personal service by Licensed Process Server",
       "Full compliance with legal requirements",
       "Personal attention from start to finish",
